@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anneke van Tilburg | Holistic Arts & Movement</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Shalimar&family=WindSong&family=Allison&family=Qwitcher+Grypen&family=Inter:wght@300;400;600&family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .font-serif {
+      font-family: 'Baskervville', serif;
+    }
+    /* Specific R. Leuschke font classes for archetypal roles */
+    .font-shalimar { font-family: 'Shalimar', cursive; }
+    .font-windsong { font-family: 'WindSong', cursive; }
+    .font-allison { font-family: 'Allison', cursive; }
+    .font-qwitcher { font-family: 'Qwitcher Grypen', cursive; }
+    
+    .font-handwritten {
+      font-family: 'Qwitcher Grypen', cursive;
+    }
+    
+    .bg-texture {
+      background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+    }
+    
+    .magician-glow {
+      box-shadow: 0 0 50px rgba(184, 134, 11, 0.12);
+    }
+    
+    .outlaw-edge {
+      clip-path: polygon(1% 0%, 100% 2%, 99% 100%, 0% 98%);
+    }
+    
+    .selection-magician::selection {
+      background: #B8860B;
+      color: white;
+    }
+    
+    .logo-font {
+      font-family: 'Qwitcher Grypen', cursive;
+      line-height: 0.6;
+      padding-bottom: 0.15em;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(10px, -15px) rotate(2deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+    .animate-drift {
+      animation: drift 10s ease-in-out infinite;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+</head>
+<body class="bg-[#F4F1ED] text-[#1A1A1B] selection-magician">
+  <div id="root"></div>
+</body>
+</html>
