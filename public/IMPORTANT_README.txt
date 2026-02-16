@@ -1,5 +1,7 @@
 
-1. Create a folder named "public" in your project root if it doesn't exist.
-2. Place your logo image in this folder.
-3. Rename your logo image to "logo.png" (preferred) or "logo.jpg".
-4. The application will automatically attempt to load "logo.png" first, then fall back to the stylized text if not found.
+To use your new logo from GitHub:
+
+1. Upload your new logo file as 'logo.png' to the 'public' folder of your GitHub repository.
+   (Repo: jvt1970-cyber/annekes-site)
+2. The app is configured to fetch: https://raw.githubusercontent.com/jvt1970-cyber/annekes-site/main/public/logo.png
+3. If you update the image and don't see changes, you can increment the '?v=...' parameter in components/Logo.tsx to force a refresh.

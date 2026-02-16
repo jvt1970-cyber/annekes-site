@@ -42,15 +42,15 @@ const App: React.FC = () => {
       <nav 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b ${
           scrolled 
-            ? 'bg-[#F4F1ED]/90 backdrop-blur-xl py-4 border-[#1A1A1B]/5 shadow-sm' 
+            ? 'bg-white/95 backdrop-blur-xl py-2 border-[#1A1A1B]/5 shadow-sm' 
             : 'bg-transparent py-8 border-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className={`max-w-7xl mx-auto px-6 flex flex-col items-center justify-center transition-all duration-500 ${scrolled ? 'gap-2' : 'gap-6'}`}>
           <a href="#home" className="group block">
             <Logo scrolled={scrolled} />
           </a>
-          <div className="hidden md:flex space-x-12 font-serif text-[10px] tracking-[0.4em] uppercase opacity-60">
+          <div className={`hidden md:flex font-serif text-[10px] tracking-[0.4em] uppercase opacity-60 transition-all duration-500 ${scrolled ? 'space-x-8' : 'space-x-12'}`}>
             <a href="#home" className="hover:text-[#D12061] hover:opacity-100 transition-all relative group">
               Journey
               <span className="absolute -bottom-2 left-0 w-0 h-px bg-[#D12061] transition-all group-hover:w-full"></span>
@@ -72,7 +72,7 @@ const App: React.FC = () => {
       </nav>
 
       {/* Hero Section - The Explorer Intro & The Creator Language */}
-      <SectionWrapper id="home" className="pt-56 pb-32" useSplatters>
+      <SectionWrapper id="home" className="pt-64 pb-32" useSplatters>
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7 space-y-10 relative">
             {/* Background scribe (Outlaw Edge) */}
@@ -82,15 +82,14 @@ const App: React.FC = () => {
             
             <div className="space-y-2">
               <span className="font-allison text-5xl text-[#D12061] block mb-2 opacity-80">Finding home in every stroke...</span>
-              <h2 className="font-serif text-8xl md:text-[10rem] leading-[0.85] text-[#1A1A1B] tracking-tighter">
+              <h2 className="font-serif text-6xl md:text-8xl leading-[0.9] text-[#1A1A1B] tracking-tighter">
                 Embody <br />
-                <span className="italic font-normal opacity-90 pl-16 md:pl-32 font-qwitcher text-[#B8860B] text-[11rem] inline-block -mt-8">the Flow.</span>
+                <span className="italic font-normal opacity-90 pl-12 md:pl-24 font-qwitcher text-[#B8860B] text-[8rem] inline-block -mt-6">the Flow.</span>
               </h2>
             </div>
             
             <p className="font-serif text-xl md:text-2xl text-[#1A1A1B]/50 leading-relaxed max-w-xl">
-              A synthesis of South Limburg's earth, vibrant pigments, and the rhythmic pulse of the dance floor. 
-              Discover the art of becoming.
+              Test tekst in het glooiende Zuid Limburg, met heerlijke ritmes op de dansvloer. Ontdek en ga mee op reis.
             </p>
             
             <div className="flex flex-wrap gap-4 pt-6">
@@ -154,7 +153,7 @@ const App: React.FC = () => {
       </SectionWrapper>
 
       {/* The Oracle - Interactive Magician */}
-      <section className="py-40 px-6 relative bg-[#F4F1ED]">
+      <section className="py-40 px-6 relative bg-white">
         <div className="max-w-3xl mx-auto text-center space-y-12">
           <div className="space-y-4">
             <p className="font-serif text-[10px] tracking-[0.5em] uppercase opacity-30">The Hidden Gem</p>
