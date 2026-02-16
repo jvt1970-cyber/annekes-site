@@ -1,13 +1,23 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { generateSoulPrompt } from './services/geminiService';
 import SectionWrapper from './components/SectionWrapper';
 import ArtisticButton from './components/ArtisticButton';
 import AnimatedBackground from './components/AnimatedBackground';
+import Logo from './components/Logo';
 
 const App: React.FC = () => {
   const [soulPrompt, setSoulPrompt] = useState<{ title: string; prompt: string } | null>(null);
   const [loadingPrompt, setLoadingPrompt] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleGetSoulPrompt = async () => {
     setLoadingPrompt(true);
@@ -29,21 +39,16 @@ const App: React.FC = () => {
       <AnimatedBackground />
 
       {/* Navigation - The Minimalist Explorer */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#F4F1ED]/80 backdrop-blur-xl py-6 border-b border-[#1A1A1B]/5 transition-all duration-300">
+      <nav 
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b ${
+          scrolled 
+            ? 'bg-[#F4F1ED]/90 backdrop-blur-xl py-4 border-[#1A1A1B]/5 shadow-sm' 
+            : 'bg-transparent py-8 border-transparent'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <a href="#home" className="group block">
-            <img 
-              src="/logo.jpg" 
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                const span = document.createElement('span');
-                span.innerText = 'Anneke van Tilburg';
-                span.className = 'logo-font text-6xl md:text-8xl text-[#1A1A1B] transition-all group-hover:-rotate-2 group-hover:scale-105 block';
-                e.currentTarget.parentElement?.appendChild(span);
-              }}
-              alt="Anneke van Tilburg" 
-              className="h-20 md:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-            />
+            <Logo scrolled={scrolled} />
           </a>
           <div className="hidden md:flex space-x-12 font-serif text-[10px] tracking-[0.4em] uppercase opacity-60">
             <a href="#home" className="hover:text-[#D12061] hover:opacity-100 transition-all relative group">
