@@ -11,7 +11,7 @@ interface LogoProps {
 // Branch: main
 // Path: public/logo.png
 // Added version query param to ensure fresh fetch when file is updated on GitHub
-const GITHUB_LOGO_URL = "https://raw.githubusercontent.com/jvt1970-cyber/annekes-site/main/public/logo.png?v=new_logo_1";
+const GITHUB_LOGO_URL = "https://raw.githubusercontent.com/jvt1970-cyber/annekes-site/main/public/logo.png?v=reload_2";
 
 const Logo: React.FC<LogoProps> = ({ className = '', scrolled = false }) => {
   return (
